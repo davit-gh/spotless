@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags staticfiles widget_tweaks %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block right-span-size %}sm-6{% endblock %}
+{% block left-span-size %}sm-6{% endblock %}
+
+{% if request.user.is_authenticated %}
+    <p>{% trans "You're already logged in. If you'd like to log in as a different user, you'll need to log out first." %}</p>
+{% else %}
+    {% block left_content %}
+        
+        {% url "signup" as signup_url %}
+        <div class="box">
+            <h1>New account</h1>
+            {% errors_for signup_form %}
+            <p class="lead">Not our registered customer yet?</p>
+            <p>The whole process of registration will not take you more than a minute!</p>
+            <p class="text-muted">If you have any questions, please feel free to <a href="{% url "page" "contact" %}">contact us</a>, our customer service center is working for you 24/7.</p>
+
+            <hr>
+
+            <form method="post">
+                {% csrf_token %}
+            
+                {% for hidden in signup_form.hidden_fields %}
+                   {{hidden}}
+                {% endfor %}
+                {% for vis in signup_form.visible_fields %}
+                    <div class="form-group">
+                        {{ vis.label_tag }}{% for error in vis.errors %} <span id=error>{{ error }}</span>{% endfor %}
+                        {% render_field vis class="form-control" %}
+                    </div>
+                {% endfor %} 
+                <div class="text-center">
+                    <button id="register_button" type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                </div>
+               
+            </form>
+        </div>
+    {% endblock %}
+    {% block right_content %}
+        <div class="box">
+            <h1>Login</h1>
+            {% errors_for login_form %}
+            <p class="lead">Already our customer?</p>
+            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
+                mi vitae est.</p>
+
+            <hr>
+
+            <form method="post">
+                {% csrf_token %}
+            
+                {% for hidden in login_form.hidden_fields %}
+                   {{hidden}}
+                {% endfor %}
+                {% for vis in login_form.visible_fields %}
+                    <div class="form-group">
+                        {{ vis.label_tag }}{% for error in vis.errors %} <span id=error>{{ error }}</span>{% endfor %}
+                        {% render_field vis class="form-control" %}
+                    </div>
+                {% endfor %}
+                    <div class="text-center">
+                        <button id="login_button" type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                    </div>
+            </form>
+        </div>
+
+    {% endblock %}
+{% endif %}
+

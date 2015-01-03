@@ -1,0 +1,15 @@
+    {% load mezzanine_tags %}
+
+    {% nevercache %}
+    {% spaceless %}
+        {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <p style="font: 18px/20px Helvetica, Arial, sans-serif;">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+    {% endnevercache %}
+    

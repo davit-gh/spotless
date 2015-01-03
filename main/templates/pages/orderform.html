@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load widget_tweaks i18n mezzanine_tags staticfiles %}
+{% block extra_head %}{{ form.media }}{% endblock %}
+
+{% block main_slider %}
+	<div class="bgimage">
+        <div class="container">
+            <div class="row slide-margin">
+                <div class="col-sm-12" id="img_header">
+                    <div class="carousel-content text-center">
+                        <h1>YOU’RE 60 SECONDS AWAY FROM AWESOME CLEANING!</h1>
+                        
+                    </div>
+                </div>
+
+                <div id="blurbs" class="col-sm-12 hidden-xs animation animated-item-4">
+                    <div class="row center-block">
+                    	<div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/schedule.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">Choose Your Date &amp; Time - 7 days a week</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/clock.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">Book in one minute</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/save.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">Pay securely online</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/no-contracts.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">No contracts, cancel anytime</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!--/.item-->
+{% endblock %}
+
+{% block left_content %}
+{% if request.GET.sent %}
+
+     		Thanks for getting in touch with us. We'll get back to you as soon as possible!
+{% else %}
+ 	{% editable page.title page.form.content %}
+ 		<h2>{{ page.title }}</h2>
+        {{ page.form.content|richtext_filters|safe }}
+ 	{% endeditable %}
+ 	<div id="form_div">
+		<form method="post">
+				{% csrf_token %}
+				{% for hidden in form.hidden_fields %}
+					{{hidden}}
+				{% endfor %}
+				
+					<div class="row">
+	                	{% for vis in form.visible_fields %}
+
+			                    <div class="col-sm-6">
+			                        <div class="form-group">
+			                            {{ vis.label_tag }}{{ vis.errors }}
+		                            	{% render_field vis class="form-control" %}
+			                        </div>
+			                    </div>
+			                    {% if forloop.last %}
+							      </div>
+							    {% else %}
+							      {% if forloop.counter|divisibleby:"2" %}
+							        </div><div class="row">
+							      {% endif %}
+							    {% endif %}			
+	             		{% endfor %}
+				    
+				    <div class="col-sm-12 text-center">
+						<button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {{ page.form.button_text }}</button>
+					</div>
+				
+		</form>
+	</div>
+{% endif %}
+{% endblock left_content %}
+
+{% block right_content %}
+	<h3><i class="fa fa-smile-o"></i> {% trans "Friendly Service" %}</h3>
+	<p>Fast and friendly customer service folks. Our average response time for emails is now 14 minutes.</p>
+	<hr>
+	<h3><i class="fa fa-home"></i> {% trans "WE PROVIDE SUPPLIES" %}</h3>
+	<p>We got this! Our team partners bring their own supplies and vacuum and honor special requests.</p>
+		<hr>
+	<h3><i class="fa fa-clock-o"></i> {% trans "SPEEDY CONFIRMATION" %}</h3>
+	<p>Book and receive a confirmation within 30 minutes during normal booking hours from 8:30am to midnight!</p>
+		<hr>
+	<h3><i class="fa fa-lock"></i> {% trans "SAFE SHOPPING GUARANTEE" %}</h3>
+	<p>It's safe to pay with Paypal as we use both-way communication encrytion and guarantee the safety of your funds.</p>
+{% endblock %}
+

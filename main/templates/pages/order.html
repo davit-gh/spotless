@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block extra_head %}{{ form.media }}{% endblock %}
+
+{% block left_content %}
+{% if request.GET.sent %}
+
+     		Thanks for getting in touch with us. We'll get back to you as soon as possible!
+{% else %}
+ 
+	<form method="post">
+			{% csrf_token %}
+			{% for hidden in form.hidden_fields %}
+				{{hidden}}
+			{% endfor %}
+			
+				<div class="row">
+                	{% for vis in form.visible_fields %}
+
+		                    <div class="col-sm-6">
+		                        <div class="form-group">
+		                            {{ vis.label_tag }}{{ vis.errors }}
+	                            	{% render_field vis class="form-control" %}
+		                        </div>
+		                    </div>
+		                    {% if forloop.last %}
+						      </div>
+						    {% else %}
+						      {% if forloop.counter|divisibleby:"2" %}
+						        </div><div class="row">
+						      {% endif %}
+						    {% endif %}			
+             		{% endfor %}
+			    
+			    <div class="col-sm-12 text-center">
+					<button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Submit</button>
+				</div>
+			
+		</form>
+{% endif %}
+{% endblock left_content %}

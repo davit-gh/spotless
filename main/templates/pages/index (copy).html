@@ -1,0 +1,252 @@
+{% extends "pages/page.html" %}
+
+{% load staticfiles mezzanine_tags shop_tags blog_tags i18n %}
+{% block body_id %}{% endblock %}
+
+
+{% block extra_css %}
+{{ block.super }}
+<!-- make the corners of select tag for sorting round and move it 
+upper to allign with its left div. cart/checkout block also moves up (panel class)-->
+
+{% endblock %}
+{% block slider_js %}
+
+
+{% endblock %}
+{% block extra_js %}
+
+
+{% endblock %}
+
+{% block main_slider %}    
+    {% if page.homepage.slides.all %}
+        <!-- *** SLIDER ***
+    _________________________________________________________ -->
+
+    
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                {% for i in page.homepage.slides.all %}
+                    <li data-target="#main-slider" data-slide-to="{{ forloop.counter0 }}" {% if forloop.counter0 == 0 %}class="active">{% endif %}</li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+            {% for slide in page.homepage.slides.all %}
+                <div class="item {% if forloop.counter0 == 0 %}active{% endif %}" style="background-image: url({{ MEDIA_URL }}{{ slide.image_back }})">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{{ MEDIA_URL }}{{ slide.image_front }}" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            {% endfor %}
+           </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+    <!-- /#slider -->
+
+    <!-- *** SLIDER END *** -->
+    {% endif %}  
+{% endblock main_slider %}
+
+{% block feature %}
+        <section id="feature" >
+        <div class="container">
+           <div class="center wow fadeInDown">
+                <h2>Features</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-bullhorn"></i>
+                            <h2>Fresh and Clean</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-comments"></i>
+                            <h2>Retina ready</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-cloud-download"></i>
+                            <h2>Easy to customize</h2>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+{% endblock feature %}
+
+{% block recent-works %}
+    <section id="recent-works">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Why Spotless Gohar?</h2>
+                <p class="lead">Our mission is to simplify your life by offering convenient house cleaning and maid services in Washington DC and other locations. We offer a variety of services and <strong>guarantee</strong> all work or your money back.</p>
+            </div>
+
+            <div class="row">
+                {% for item in items %}
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="recent-work-wrap">
+                                <img src="{{MEDIA_URL}}{% thumbnail item.featured_image 290 220 %}" alt=""/>
+                                <div class="overlay">
+                                    <div class="recent-work-inner">
+                                        <h3><a href="{{ item.href }}">{{ item.title }}</a> </h3>
+                                        {{ item.short_description|richtext_filters|safe }}
+                                        <a class="preview" href="{{MEDIA_URL}}{{ item.featured_image }}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                    </div> 
+                                </div>
+                            </div>
+                    </div>   
+                {% endfor %}
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#recent-works-->
+{% endblock recent-works %}
+
+{% block services %}
+    <section id="services" class="service-item">
+       <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Why Spotless Gohar?</h2>
+                <p class="lead">Our mission is to simplify your life by offering convenient house cleaning and maid services in Washington DC and other locations. We offer a variety of services and <strong>guarantee</strong> all work or your money back.</p>
+            </div>
+
+            <div class="row">
+                {% for item in items %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="media services-wrap wow fadeInDown">
+                            <div class="pull-left">
+                                <img class="img-responsive" src="{{MEDIA_URL}}{% thumbnail item.featured_image 80 80 %}">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">{{ item.title }}</h3>
+                                {{ item.short_description|richtext_filters|safe }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                                    
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#services-->
+{% endblock services %}
+
+{% block left_content %}
+    <div class="tab-wrap"> 
+        <div class="media">
+            <div class="parrent pull-left">
+                <ul class="nav nav-tabs nav-stacked">
+                {% for item in items %}
+                    <li class="{% if forloop.counter0 == 0 %}active{% endif %}">
+                        <a href="#{{ item.id }}" data-toggle="tab" class="analistic-01">{{ item.title }}</a>
+                    </li>
+                {% endfor %}            
+                </ul>
+            </div>
+
+            <div class="parrent media-body">
+                <div class="tab-content">
+                    {% for item in items %}
+                        <div class="tab-pane fade {% if forloop.counter0 == 0 %}active in{% endif %}" id="{{ item.id }}">
+                            <div class="media">
+                               <div class="pull-left">
+                                    <img class="img-responsive" src="{{MEDIA_URL}}{% thumbnail item.featured_image 190 150 %}">
+                                </div>
+                                <div class="media-body">
+                                     <h2>{{ item.title }}</h2>
+                                     {{ item.short_description|richtext_filters|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div> <!--/.tab-content-->  
+            </div> <!--/.media-body--> 
+        </div> <!--/.media-->     
+    </div><!--/.tab-wrap-->   
+{% endblock left_content %}
+{% block right_content %}            
+    <div class="testimonial">
+        <h2>Testimonials</h2>
+         <div class="media testimonial-inner">
+            <div class="pull-left">
+                <img class="img-responsive img-circle" src="{% static "images/testimonials1.png" %}">
+            </div>
+            <div class="media-body">
+                <p>"Spotless Gohar" is fantastic! I am greatly satisfied with the service they provide. Definetly will recommend to my friends.</p>
+                <span><strong>-John Doe/</strong> Director of corlate.com</span>
+            </div>
+         </div>
+
+         <div class="media testimonial-inner">
+            <div class="pull-left">
+                <img class="img-responsive img-circle" src="{% static "images/ribon_one.png" %}">
+            </div>
+            <div class="media-body">
+                <p>This is just amazing! My house shines like after a new renovation. You guys rock!</p>
+                <span><strong>-John Doe/</strong> Director of buybuybuy.com</span>
+            </div>
+         </div>
+
+    </div>
+{% endblock right_content %}
+
+{% block partner %}
+        <section id="partner">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Our Partners</h2>
+                <p class="lead">We have the best partners in the world!</p>
+            </div>    
+
+            <div class="partners">
+                <ul>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="{% static "images/partners/partner1.png" %}"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="{% static "images/partners/partner2.png" %}"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="{% static "images/partners/partner3.png" %}"></a></li>
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="{% static "images/partners/partner4.jpg" %}"></a></li>
+                    
+                </ul>
+            </div>        
+        </div><!--/.container-->
+    </section><!--/#partner-->
+
+{% endblock partner %}
