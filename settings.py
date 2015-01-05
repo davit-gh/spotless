@@ -119,7 +119,13 @@ from __future__ import absolute_import, unicode_literals
 # field instance. When specifying the field class, the path
 # ``django.models.db.`` can be omitted for regular Django model fields.
 #
-# EXTRA_MODEL_FIELDS = (
+EXTRA_MODEL_FIELDS = (
+        (
+            "cartridge.shop.models.Order.callback_uuid",
+            "django.db.models.CharField",
+            (),
+            {"blank" : False, "max_length" : 36, "default": ""},
+        ),
 #     (
 #         # Dotted path to field.
 #         "mezzanine.blog.models.BlogPost.image",
@@ -137,7 +143,7 @@ from __future__ import absolute_import, unicode_literals
 #         ("Another name",),
 #         {"blank": True, "default": 1},
 #     ),
-# )
+)
 
 
 FORMS_EXTRA_WIDGETS = (
@@ -306,6 +312,8 @@ INSTALLED_APPS = (
     "main",
     "widget_tweaks",
     "datetimewidget",
+    "payments.multipayments",
+    'paypal.standard.ipn',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -342,6 +350,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
     "mezzanine.conf.context_processors.settings",
+#    "payments.multipayments.context_processors.settings",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -445,3 +454,36 @@ else:
     set_dynamic_settings(globals())
 
 BLOG_USE_FEATURED_IMAGE = True
+
+PAYPAL_RECEIVER_EMAIL  = '2244022248@qq.com'
+# Currency type.
+PAYPAL_CURRENCY = "USD"
+
+# Business account email. Sandbox emails look like this.
+PAYPAL_BUSINESS = '2244022248@qq.com'
+
+# Use this to enable https on return URLs.  This is strongly recommended! (Except for sandbox)
+PAYPAL_RETURN_WITH_HTTPS = True
+
+# Function that returns args for `reverse`.
+# URL is sent to PayPal as the for returning to a 'complete' landing page.
+PAYPAL_RETURN_URL = ""
+
+# Function that returns args for `reverse`.
+# URL is sent to PayPal as the URL to callback to for PayPal IPN.
+# Set to None if you do not wish to use IPN.
+PAYPAL_IPN_URL = ""
+
+# URL the secondary-payment-form is submitted to
+# Dev example
+PAYPAL_SUBMIT_URL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
+# Prod example
+#PAYPAL_SUBMIT_URL = 'https://www.paypal.com/cgi-bin/webscr'
+SECONDARY_PAYMENT_PROCESSORS = (
+    ('paypal', {
+        'name' : 'Pay With Pay-Pal',
+        'form' : 'payments.multipayments.forms.paypal.PaypalSubmissionForm'
+    }),
+)
+
+SHOP_CHECKOUT_FORM_CLASS = 'payments.multipayments.forms.base.CallbackUUIDOrderForm'

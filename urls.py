@@ -56,6 +56,7 @@ urlpatterns += patterns('',
 
     url("^$", "mezzanine.pages.views.page", {"slug": "/"}, name="home"),
     url(r'^order/', view='main.views.order', name='order_form'),
+    (r'^paypal-ipn-8c5erc9ye49ia51rn65/', include('paypal.standard.ipn.urls')),
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------
     # This pattern points the homepage to the blog post listing page,

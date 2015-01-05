@@ -2,6 +2,15 @@
 {% load widget_tweaks i18n mezzanine_tags staticfiles %}
 {% block extra_head %}{{ form.media }}{% endblock %}
 
+{% block extra_js %}
+<script type="text/javascript">
+	$( window ).load(function() {
+		$('input#id_amount').val("{{ request.GET.price }}");
+		$('input#id_item_name').val("{{ request.GET.name }}");
+	});
+</script>
+{% endblock %}
+
 {% block main_slider %}
 	<div class="bgimage">
         <div class="container">
@@ -41,8 +50,16 @@
 
 {% block left_content %}
 {% if request.GET.sent %}
+	{% if request.GET.ppl == '1' %}
+        <form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+	        {{ paypal_form.as_p }}
+	        <input type="image" value="{% trans name %}" src="{% static 'images/paypal.jpg' %}" class="img-responsive">
+	    </form>
+    {% else %}
+		<p>Thanks for for your order. You chose to pay by cash. We'll be on time!
+	{% endif %}    
 
-     		Thanks for getting in touch with us. We'll get back to you as soon as possible!
+     		
 {% else %}
  	{% editable page.title page.form.content %}
  		<h2>{{ page.title }}</h2>
@@ -74,7 +91,9 @@
 	             		{% endfor %}
 				    
 				    <div class="col-sm-12 text-center">
-						<button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {{ page.form.button_text }}</button>
+				    	
+							<button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {{ page.form.button_text }}</button>
+					
 					</div>
 				
 		</form>

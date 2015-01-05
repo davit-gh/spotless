@@ -31,3 +31,11 @@ class OrderForm(forms.ModelForm):
     payment_type = forms.ChoiceField(choices=PAYMENT_CHOICES, widget=forms.RadioSelect())
     class Meta:
         model = Order
+
+from paypal.standard.forms import PayPalPaymentsForm
+from paypal.standard.widgets import ValueHiddenInput, ReservedValueHiddenInput
+ 
+class PayPalPaymentsFormCustom(PayPalPaymentsForm):
+    image_url = forms.CharField(widget=ValueHiddenInput)
+    custom = forms.CharField(widget=ValueHiddenInput)
+    hosted_button_id = forms.CharField(widget=ValueHiddenInput)
