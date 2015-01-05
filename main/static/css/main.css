@@ -2678,3 +2678,7 @@ div#img_header.col-sm-12{
 div#contact_methods{
   margin-top: 7em;
 }
+
+div.navbar-header{
+  margin-top: -1em;
+}
