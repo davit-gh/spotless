@@ -46,9 +46,11 @@ from mezzanine.pages.models import Link
 @processor_for('table')
 def table_processor(request, page):
     tablecells = TableCell.objects.filter(parent=page)
-    links = Link.objects.filter(parent=page)
+    links1 = Link.objects.filter(parent=Link.objects.get(title='first'))
+    links2 = Link.objects.filter(parent=Link.objects.get(title='second'))
+    links3 = Link.objects.filter(parent=Link.objects.get(title='third'))
     #pdb.set_trace()
-    return {'tablecells': tablecells, 'links': links}
+    return {'tablecells': tablecells, 'links1': links1, 'links2': links2, 'links3': links3}
 
 from django.http import HttpResponseRedirect
 #from django import forms

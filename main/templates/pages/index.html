@@ -118,8 +118,9 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
     <section id="services" class="service-item">
        <div class="container">
             <div class="center wow fadeInDown">
-                <h2>Why Spotless Gohar?</h2>
-                <p class="lead">Our mission is to simplify your life by offering convenient house cleaning and maid services in Washington DC and other locations. We offer a variety of services and <strong>guarantee</strong> all work or your money back.</p>
+                {% editable page.title page.homepage.content %}<h2>{{ page.title }}</h2>
+                {{ page.homepage.content|richtext_filters|safe }}
+                {% endeditable %}
             </div>
 
             <div class="row">

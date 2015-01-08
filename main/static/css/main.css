@@ -2682,3 +2682,29 @@ div#contact_methods{
 div.navbar-header{
   margin-top: -1em;
 }
+
+a#login_button{
+  width: auto;
+  height: auto;
+  border: 1px solid #000;
+}
+
+@media (min-width: 768px){
+  .container {
+      width: 850px;
+  }
+}
+
+div.editable-original h4 {
+  font-size: 22px;
+  font-family: 'Slabo 27px', serif;
+  color: #61728E;
+  padding: 10px 0 10px 0;
+}
+
+div.editable-original h3 {
+  font-size: 28px;
+  font-family: 'Slabo 27px', serif;
+  color: #61728E;
+  padding: 10px 0 10px 0;
+}
