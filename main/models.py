@@ -35,6 +35,7 @@ class Slide(Orderable):
     image_front = FileField(verbose_name=_("Image front"),
         upload_to=upload_to("main.static.image", "slider"),
         format="Image", max_length=255, null=True, blank=True)
+    text = models.CharField(max_length=400, blank=True)
 
 COLUMN_CHOICES = (
     ('6', 'Two columns'), # 2 columns use span6
