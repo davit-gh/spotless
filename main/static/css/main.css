@@ -2691,7 +2691,7 @@ a#login_button{
 
 @media (min-width: 768px){
   .container {
-      width: 850px;
+      width: auto;
   }
 }
 
@@ -2707,4 +2707,9 @@ div.editable-original h3 {
   font-family: 'Slabo 27px', serif;
   color: #61728E;
   padding: 10px 0 10px 0;
+}
+
+div.carousel-content h1{
+  color: #000;
+  text-align: justify;
 }
