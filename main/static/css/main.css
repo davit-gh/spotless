@@ -2713,3 +2713,7 @@ div.carousel-content h1{
   color: #000;
   text-align: justify;
 }
+
+div#cont{
+  background-color: rgba(72,87,115,0.77);
+}
