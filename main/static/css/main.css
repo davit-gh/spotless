@@ -2738,3 +2738,7 @@ div.col-xs-12.col-sm-8.wow.fadeInDown.animated h3 {
   color: #61728E;
   padding: 10px 0 10px 0;
 }
+
+div#accordion3{
+  width: 60%;
+}
