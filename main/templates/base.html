@@ -119,14 +119,14 @@ _________________________________________________________ -->
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{% url "home" %}"><img src="{% static "images/logo.jpg" %}" width='100' alt="logo"></a>
+                    <a class="navbar-brand" href="{% url "home" %}"><img id="logo_img" src="{% static "images/logo.jpg" %}" width='150' alt="logo"></a>
                 </div>
                 
-                <div class="collapse navbar-collapse navbar-left" style="margin-left:2em">
+                <div class="collapse navbar-collapse" style="margin-left:2em">
                     <ul class="nav navbar-nav">
                         <li class="{% if page.slug == '/' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
                         <li class="{% if page.slug == 'about' %}active{% endif %}"><a href="{% url 'page' 'about' %}">About Us</a></li>
-                        <li class="{% if page.slug == 'table' %}active{% endif %}"><a href="{% url 'page' 'table' %}">Services&Prices</a></li>
+                        <li class="{% if page.slug == 'table' %}active{% endif %}"><a href="{% url 'page' 'table' %}">Services & Prices</a></li>
                         <li class="{% if page.slug == 'orderform' %}active{% endif %}"><a href="{% url 'page' 'orderform' %}">Order</a></li>
                         <li class="{% if page.slug = 'faq' %}active{% endif %}"><a href="{% url 'page' 'faq' %}">FAQ</a></li>
                         <li class="{% if page.slug == 'blog' %}active{% endif %}"><a href="{% url 'blog_post_list' %}">Blog</a></li> 

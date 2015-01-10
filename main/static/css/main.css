@@ -373,7 +373,7 @@ input.search-form:hover {
 }
 
 #main-slider .carousel .carousel-content {
-  margin-top: 150px;
+  margin-top: 25px;
 }
 
 #main-slider .carousel .slide-margin{
@@ -556,12 +556,12 @@ input.search-form:hover {
 }
 
 .feature-wrap i{
-  font-size: 48px;
-  height: 110px;
-  width: 110px;
+  font-size: 46px;
+  height: 70px;
+  width: 80px;
   margin: 3px;
   border-radius: 100%;
-  line-height: 110px;
+  line-height: 65px;
   text-align:center;
   background: #ffffff;
   color: #c52d2f;
@@ -2695,19 +2695,7 @@ a#login_button{
   }
 }
 
-div.editable-original h4 {
-  font-size: 22px;
-  font-family: 'Slabo 27px', serif;
-  color: #61728E;
-  padding: 10px 0 10px 0;
-}
 
-div.editable-original h3 {
-  font-size: 28px;
-  font-family: 'Slabo 27px', serif;
-  color: #61728E;
-  padding: 10px 0 10px 0;
-}
 
 div.carousel-content h1{
   color: #000;
@@ -2716,4 +2704,36 @@ div.carousel-content h1{
 
 div#cont{
   background-color: rgba(72,87,115,0.77);
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+img#logo_img{
+  position: fixed;
+  z-index: 10;
+}
+
+div.col-xs-12.col-sm-8.wow.fadeInDown.animated h4 {
+  font-size: 22px;
+  font-family: 'Slabo 27px', serif;
+  color: #61728E;
+  padding: 10px 0 10px 0;
+}
+
+
+div.col-xs-12.col-sm-8.wow.fadeInDown.animated h3 {
+  font-size: 28px;
+  font-family: 'Slabo 27px', serif;
+  color: #61728E;
+  padding: 10px 0 10px 0;
 }
