@@ -2587,6 +2587,7 @@ div.bgimage::after {
 p#blurb_text{
   color: #fff;
   font-weight: bold;
+  text-align: center;
 }
 
 div#img_header.col-sm-12{
@@ -2699,7 +2700,7 @@ a#login_button{
 
 div.carousel-content h1{
   color: #000;
-  text-align: justify;
+  text-align: center;
 }
 
 div#cont{

@@ -173,6 +173,11 @@ _________________________________________________________ -->
     <section id="content">
         <div class="container">
             <div class="row">
+                {% block no_leftest_content %}
+                    <div class="col-xs-12 col-{% block leftest-span-size %}sm-3{% endblock %} wow fadeInDown">
+                        {% block leftest_content %}{% endblock %}
+                    </div>
+                {% endblock %}
                 <div class="col-xs-12 col-{% block left-span-size %}sm-8{% endblock %} wow fadeInDown">
                     {% block left_content %}{% endblock %}
                 </div>
