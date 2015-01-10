@@ -43,7 +43,7 @@
 
 
                                     <div class="form-group">
-                                        {% trans vis.label_tag %}{% trans vis.errors %}<br>{% trans vis.help_text %}
+                                        {% trans vis.label_tag %}{% for error in vis.errors %}{% trans error %}{% endfor %}<br>{% trans vis.help_text %}
                                         {% render_field vis class="form-control" %}
                                     </div>
 
@@ -60,7 +60,7 @@
             <hr>
             <h4>{% trans 'Email us directly at info@axaxin.com for a speedy reply.' %}</h4>
             <hr>
-            <h4>{% trans 'On the run? Call us at 055 53 30 34. If you're looking for a quote please' %} <a href="{% url 'page' 'table' %}">{% trans 'click here' %}</a> {% trans 'to see our flat rate pricing!' %}</h4>
+            <h4>{% trans 'On the run? Call us at 055 53 30 34. If you are looking for a quote please' %} <a href="{% url 'page' 'table' %}">{% trans 'click here' %}</a> {% trans 'to see our flat rate pricing!' %}</h4>
             <hr>
             <h4>{% trans 'Chat live with one of our friendly folks!' %}</h4>
         </div>
