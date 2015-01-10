@@ -18,8 +18,8 @@
  {% block main_slider %}
     <div class="container">
       {% editable page.richtextpage.content page.richtextpage.title %}
-        <h1 style="color:#000">{{ page.richtextpage.title }}</h1>
-        {{ page.richtextpage.content|richtext_filters|safe }}
+        <h1 style="color:#000">{% trans page.richtextpage.title %}</h1>
+        {% trans page.richtextpage.content|richtext_filters|safe %}
       {% endeditable %}
     </div>
 {% endblock %}

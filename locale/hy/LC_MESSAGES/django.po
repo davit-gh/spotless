@@ -1,0 +1,522 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-10 18:24+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:196
+msgid "English"
+msgstr ""
+
+#: main/models.py:22
+msgid "Home page"
+msgstr ""
+
+#: main/models.py:23
+msgid "Home pages"
+msgstr ""
+
+#: main/models.py:31
+msgid "Image back"
+msgstr ""
+
+#: main/models.py:35
+msgid "Image front"
+msgstr ""
+
+#: main/models.py:53
+msgid "Portfolio"
+msgstr ""
+
+#: main/models.py:54
+msgid "Portfolios"
+msgstr ""
+
+#: main/models.py:58
+msgid "Featured Image"
+msgstr ""
+
+#: main/models.py:64 main/templates/blog/includes/filter_panel.html:38
+msgid "Categories"
+msgstr ""
+
+#: main/models.py:69
+msgid "Portfolio item"
+msgstr ""
+
+#: main/models.py:70
+msgid "Portfolio items"
+msgstr ""
+
+#: main/models.py:75
+msgid "File"
+msgstr ""
+
+#: main/models.py:87
+msgid "Portfolio Item Category"
+msgstr ""
+
+#: main/models.py:88
+msgid "Portfolio Item Categories"
+msgstr ""
+
+#: main/models.py:102
+msgid "Tablecell"
+msgstr ""
+
+#: main/models.py:103
+msgid "Tablecells"
+msgstr ""
+
+#: main/templates/base.html:71
+msgid "Hello"
+msgstr ""
+
+#: main/templates/base.html:71
+msgid "Customer login"
+msgstr ""
+
+#: main/templates/base.html:76
+msgid "Update Profile"
+msgstr ""
+
+#: main/templates/base.html:127 main/templates/base.html.py:219
+#: main/templates/pages/menus/breadcrumb.html:4
+#: main/templates/pages/menus/breadcrumb.html:10
+#: main/templates/pages/menus/dropdown.html:10
+#: main/templates/pages/menus/footer_tree.html:11
+#: main/templates/pages/menus/mobile.html:10
+#: main/templates/pages/menus/primary.html:8
+#: main/templates/pages/menus/tree.html:9
+msgid "Home"
+msgstr ""
+
+#: main/templates/base.html:128 main/templates/base.html.py:220
+msgid "About Us"
+msgstr "Մեր Մասին"
+
+#: main/templates/base.html:129 main/templates/base.html.py:221
+msgid "Services & Prices"
+msgstr "Ծառ․ և Գներ"
+
+#: main/templates/base.html:130 main/templates/base.html.py:222
+msgid "Order"
+msgstr ""
+
+#: main/templates/base.html:131 main/templates/base.html.py:223
+#: main/templates/pages/faq.html:31
+msgid "FAQ"
+msgstr ""
+
+#: main/templates/base.html:132 main/templates/base.html.py:224
+#: main/templates/blog/blog_post_list.html:4
+#: main/templates/blog/blog_post_list.html:22
+msgid "Blog"
+msgstr ""
+
+#: main/templates/base.html:133 main/templates/base.html.py:225
+msgid "Contact"
+msgstr ""
+
+#: main/templates/base.html:140
+msgid "User login"
+msgstr ""
+
+#: main/templates/base.html:203
+msgid "IF A HIGH TECH COMPANY OFFERED CLEANING SERVICES"
+msgstr ""
+
+#: main/templates/base.html:204
+msgid ""
+"We are changing the image of cleaning companies by offering a convenient, "
+"Organic, and Fair Labor Service that gives remarkable cleaning delivered "
+"with a fully seamless online experience."
+msgstr ""
+
+#: main/templates/base.html:205
+msgid "TRY US AND SEE WHAT THE FUSS IS ABOUT"
+msgstr ""
+
+#: main/templates/base.html:215 main/templates/pages/faq.html:63
+msgid "Axaxin Service"
+msgstr ""
+
+#: main/templates/base.html:215
+msgid "All Rights Reserved."
+msgstr ""
+
+#: main/templates/accounts/account_signup.html:15
+msgid ""
+"You're already logged in. If you'd like to log in as a different user, "
+"you'll need to log out first."
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:43
+msgid "Posted by"
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:47
+#: main/templates/blog/blog_post_list.html:115
+#, python-format
+msgid "%(sometime)s ago"
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:57
+msgid "Comments"
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:60
+#: main/templates/blog/blog_post_list.html:116
+#, python-format
+msgid "%(comments_count)s comment"
+msgid_plural "%(comments_count)s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: main/templates/blog/blog_post_detail.html:107
+msgid "Share on Twitter"
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:108
+msgid "Share on Facebook"
+msgstr ""
+
+#: main/templates/blog/blog_post_detail.html:133
+msgid "Related posts"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:39
+msgid "Tag:"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:41
+msgid "Category:"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:45
+msgid "Author:"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:61
+msgid "Viewing posts tagged"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:63
+msgid "Viewing posts for the category"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:65
+msgid "Viewing posts from"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:68
+msgid "Viewing posts by"
+msgstr ""
+
+#: main/templates/blog/blog_post_list.html:108
+#: main/templates/blog/includes/filter_panel.html:53
+msgid "Tags"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:7
+msgid "Recent Posts"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:20
+msgid "Archive"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:67
+msgid "Authors"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:80
+msgid "Feeds"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:82
+#: main/templates/blog/includes/filter_panel.html:86
+#: main/templates/blog/includes/filter_panel.html:90
+#: main/templates/blog/includes/filter_panel.html:94
+msgid "RSS"
+msgstr ""
+
+#: main/templates/blog/includes/filter_panel.html:83
+#: main/templates/blog/includes/filter_panel.html:87
+#: main/templates/blog/includes/filter_panel.html:91
+#: main/templates/blog/includes/filter_panel.html:95
+msgid "Atom"
+msgstr ""
+
+#: main/templates/includes/editable_form.html:16
+msgid "Save"
+msgstr ""
+
+#: main/templates/includes/editable_form.html:17
+msgid "Cancel"
+msgstr ""
+
+#: main/templates/includes/editable_form.html:25
+msgid "Edit"
+msgstr ""
+
+#: main/templates/includes/editable_toolbar.html:8
+msgid "Admin"
+msgstr ""
+
+#: main/templates/includes/editable_toolbar.html:9
+msgid "Log out"
+msgstr ""
+
+#: main/templates/includes/form_errors.html:8
+msgid "Please correct the errors below."
+msgstr ""
+
+#: main/templates/includes/pagination.html:7
+msgid "Page"
+msgstr ""
+
+#: main/templates/includes/pagination.html:7
+msgid "of"
+msgstr ""
+
+#: main/templates/includes/search_form.html:5
+msgid "Search"
+msgstr ""
+
+#: main/templates/includes/search_form.html:14
+msgid "Everything"
+msgstr ""
+
+#: main/templates/includes/search_form.html:26
+msgid "Go"
+msgstr ""
+
+#: main/templates/pages/contact.html:20
+msgid "HAVE"
+msgstr ""
+
+#: main/templates/pages/contact.html:20
+msgid "QUESTIONS"
+msgstr ""
+
+#: main/templates/pages/contact.html:20
+msgid "? WE HAVE GOT"
+msgstr ""
+
+#: main/templates/pages/contact.html:20
+msgid "ANSWERS"
+msgstr ""
+
+#: main/templates/pages/contact.html:21
+msgid "Get answers to your questions from our Customer Happiness Team."
+msgstr ""
+
+#: main/templates/pages/contact.html:22
+msgid "Five ways to get in touch!"
+msgstr ""
+
+#: main/templates/pages/contact.html:59
+msgid "Get fast answers on Facebook: Axaxin Service"
+msgstr ""
+
+#: main/templates/pages/contact.html:61
+msgid "Email us directly at info@axaxin.com for a speedy reply."
+msgstr ""
+
+#: main/templates/pages/contact.html:63
+msgid "On the run? Call us at 055 53 30 34. If you"
+msgstr ""
+
+#: main/templates/pages/contact.html:63
+msgid "click here"
+msgstr ""
+
+#: main/templates/pages/contact.html:63
+msgid "to see our flat rate pricing!"
+msgstr ""
+
+#: main/templates/pages/contact.html:65
+msgid "Chat live with one of our friendly folks!"
+msgstr ""
+
+#: main/templates/pages/faq.html:60
+msgid "Need help with something not listed to the left?"
+msgstr ""
+
+#: main/templates/pages/faq.html:61
+msgid "YOU CAN…"
+msgstr ""
+
+#: main/templates/pages/faq.html:62
+msgid "Get fast answers on Facebook"
+msgstr ""
+
+#: main/templates/pages/faq.html:63
+msgid "For fast answers, message your questions to"
+msgstr ""
+
+#: main/templates/pages/faq.html:64
+msgid "OR…"
+msgstr ""
+
+#: main/templates/pages/faq.html:65
+msgid "Contact our Customer Happiness Team"
+msgstr ""
+
+#: main/templates/pages/faq.html:66
+msgid "For in-depth questions,"
+msgstr ""
+
+#: main/templates/pages/faq.html:66
+msgid "Get in Touch Here"
+msgstr ""
+
+#: main/templates/pages/index.html:81
+msgid "HAPPY CUSTOMERS"
+msgstr ""
+
+#: main/templates/pages/index.html:82
+msgid "Perchuhi Amasian"
+msgstr ""
+
+#: main/templates/pages/index.html:83
+#, python-format
+msgid ""
+"I have children, I work and housework has always been like an insurmountable "
+"difficulty for me. I used a variety of services, with some of those I was "
+"happy, sometimes was unhappy, however, with \"Axaxin service\" I simply "
+"realized that I am done with searching! They provide quality, not satisfied? "
+"They clean up again. You still don't like it? They return the full charge. "
+"The idea of 100%% Guarantee operates in all over the world. Now in Armenia "
+"as well."
+msgstr ""
+
+#: main/templates/pages/index.html:90
+msgid "TRUSTWORTHY & SECURE"
+msgstr ""
+
+#: main/templates/pages/index.html:91
+msgid "128-bit encryption secure site"
+msgstr ""
+
+#: main/templates/pages/index.html:98
+msgid "Hours"
+msgstr ""
+
+#: main/templates/pages/index.html:99
+msgid "Hours of operation: Mon-Sun: 8:30 AM - 5:00 PM"
+msgstr ""
+
+#: main/templates/pages/index.html:147
+msgid "Our Partners"
+msgstr ""
+
+#: main/templates/pages/orderform.html:20
+msgid "YOU’RE 60 SECONDS AWAY FROM AWESOME CLEANING!"
+msgstr ""
+
+#: main/templates/pages/orderform.html:29
+msgid "Choose Your Date & Time - 7 days a week"
+msgstr ""
+
+#: main/templates/pages/orderform.html:33
+msgid "Book in one minute"
+msgstr ""
+
+#: main/templates/pages/orderform.html:37
+msgid "Pay securely online"
+msgstr ""
+
+#: main/templates/pages/orderform.html:41
+msgid "No contracts, cancel anytime"
+msgstr ""
+
+#: main/templates/pages/orderform.html:62
+msgid ""
+"Thanks for for your order. You chose to pay by cash. We will be on time!"
+msgstr ""
+
+#: main/templates/pages/orderform.html:108
+msgid "Friendly Service"
+msgstr ""
+
+#: main/templates/pages/orderform.html:109
+msgid ""
+"Fast and friendly customer service folks. Our average response time for "
+"emails is now 14 minutes."
+msgstr ""
+
+#: main/templates/pages/orderform.html:111
+msgid "WE PROVIDE SUPPLIES"
+msgstr ""
+
+#: main/templates/pages/orderform.html:112
+msgid ""
+"We got this! Our team partners bring their own supplies and vacuum and honor "
+"special requests."
+msgstr ""
+
+#: main/templates/pages/orderform.html:114
+msgid "SPEEDY CONFIRMATION"
+msgstr ""
+
+#: main/templates/pages/orderform.html:115
+msgid ""
+"Book and receive a confirmation within 30 minutes during normal booking "
+"hours from 8:30am to midnight!"
+msgstr ""
+
+#: main/templates/pages/orderform.html:117
+msgid "SAFE SHOPPING GUARANTEE"
+msgstr ""
+
+#: main/templates/pages/orderform.html:118
+msgid ""
+"It is safe to pay with Paypal as we use both-way communication encrytion and "
+"guarantee the safety of your funds."
+msgstr ""
+
+#: main/templates/pages/table.html:14
+msgid ""
+"We deliver happiness through house cleaning and other home and lifestyle "
+"services. We offer very simple flat fee pricing and services in Yerevan. Our "
+"transparent prices eliminate any surprise typically associated with other "
+"cleaning companies. Whether you live in a six bedroom home or a small "
+"studio, we always send out a team of two members to make sure we exceed your "
+"expectations. There will never be any surprises associated with your "
+"booking. Here are our prices:"
+msgstr ""
+
+#: main/templates/pages/table.html:42
+msgid "Bedroom"
+msgstr ""
+
+#: main/templates/pages/table.html:67
+msgid "Book Now"
+msgstr ""
+
+#: main/templates/pages/table.html:71
+msgid "Kitchen"
+msgstr ""
+
+#: main/templates/pages/table.html:95
+msgid "Bath & Tub"
+msgstr ""
+
+#: main/templates/pages/menus/admin.html:31
+msgid "Add"
+msgstr ""

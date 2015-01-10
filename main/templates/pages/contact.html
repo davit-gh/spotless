@@ -17,9 +17,9 @@
                 
                 <div class="subnavi">
                     <div class="bighead text-center">
-                        <p class="bhp">HAVE <span class="whiti">QUESTIONS</span>? WE'VE GOT <span class="whiti">ANSWERS</span>.</p>
-                        <p class="shpwhiti">Get answers to your questions from our Customer Happiness Team.</p>
-                        <p class="shp">Five ways to get in touch!</p>
+                        <p class="bhp">{% trans 'HAVE' %} <span class="whiti">{% trans 'QUESTIONS' %}</span>{% trans '? WE HAVE GOT' %} <span class="whiti">{% trans 'ANSWERS' %}</span>.</p>
+                        <p class="shpwhiti">{% trans 'Get answers to your questions from our Customer Happiness Team.' %}</p>
+                        <p class="shp">{% trans 'Five ways to get in touch!' %}</p>
                     </div>                  
                 </div>
                 
@@ -28,10 +28,10 @@
 {% endblock %}
 
 {% if request.GET.sent %}
-    <p>{{ page.form.response }}</p>
+    <p>{% trans page.form.response %}</p>
 {% else %}
     {% block left_content %}
-        {{ page.form.content|richtext_filters|safe }}
+        {% trans page.form.content|richtext_filters|safe %}
        <div id="form_div">
         <form method="post">
                 {% csrf_token %}
@@ -43,7 +43,7 @@
 
 
                                     <div class="form-group">
-                                        {{ vis.label_tag }}{{ vis.errors }}<br>{{ vis.help_text }}
+                                        {% trans vis.label_tag %}{% trans vis.errors %}<br>{% trans vis.help_text %}
                                         {% render_field vis class="form-control" %}
                                     </div>
 
@@ -51,18 +51,18 @@
                         {% endfor %}
                     
                     <div class="col-sm-12 text-center">
-                        <button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {{ page.form.button_text }}</button>
+                        <button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {% trans page.form.button_text %}</button>
                     </div>
                 
         </form>
         <div id="contact_methods">
-            <h4>Get fast answers on Twitter: @spotlessgohar</h4>
+            <h4>{% trans 'Get fast answers on Facebook: Axaxin Service' %}</h4>
             <hr>
-            <h4>Email us directly at support@spotlessgohar.com for a speedy reply.</h4>
+            <h4>{% trans 'Email us directly at info@axaxin.com for a speedy reply.' %}</h4>
             <hr>
-            <h4>On the run? Call us at 055 53 30 34. If you're looking for a quote please <a href="{% url 'page' 'table' %}">click here</a> to see our flat rate pricing!</h4>
+            <h4>{% trans 'On the run? Call us at 055 53 30 34. If you're looking for a quote please' %} <a href="{% url 'page' 'table' %}">{% trans 'click here' %}</a> {% trans 'to see our flat rate pricing!' %}</h4>
             <hr>
-            <h4>Chat live with one of our friendly folks!</h4>
+            <h4>{% trans 'Chat live with one of our friendly folks!' %}</h4>
         </div>
     </div>
     {% endblock %}

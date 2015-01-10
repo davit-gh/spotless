@@ -124,20 +124,20 @@ _________________________________________________________ -->
                 
                 <div class="collapse navbar-collapse" style="margin-left:2em">
                     <ul class="nav navbar-nav">
-                        <li class="{% if page.slug == '/' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="{% if page.slug == 'about' %}active{% endif %}"><a href="{% url 'page' 'about' %}">About Us</a></li>
-                        <li class="{% if page.slug == 'table' %}active{% endif %}"><a href="{% url 'page' 'table' %}">Services & Prices</a></li>
-                        <li class="{% if page.slug == 'orderform' %}active{% endif %}"><a href="{% url 'page' 'orderform' %}">Order</a></li>
-                        <li class="{% if page.slug = 'faq' %}active{% endif %}"><a href="{% url 'page' 'faq' %}">FAQ</a></li>
-                        <li class="{% if page.slug == 'blog' %}active{% endif %}"><a href="{% url 'blog_post_list' %}">Blog</a></li> 
-                        <li class="{% if page.slug == 'contact' %}active{% endif %}"><a href="{% url 'page' 'contact' %}">Contact</a></li>                        
+                        <li class="{% if page.slug == '/' %}active{% endif %}"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                        <li class="{% if page.slug == 'about' %}active{% endif %}"><a href="{% url 'page' 'about' %}">{% trans 'About Us' %}</a></li>
+                        <li class="{% if page.slug == 'table' %}active{% endif %}"><a href="{% url 'page' 'table' %}">{% trans 'Services & Prices' %}</a></li>
+                        <li class="{% if page.slug == 'orderform' %}active{% endif %}"><a href="{% url 'page' 'orderform' %}">{% trans 'Order' %}</a></li>
+                        <li class="{% if page.slug = 'faq' %}active{% endif %}"><a href="{% url 'page' 'faq' %}">{% trans 'FAQ' %}</a></li>
+                        <li class="{% if page.slug == 'blog' %}active{% endif %}"><a href="{% url 'blog_post_list' %}">{% trans 'Blog' %}</a></li> 
+                        <li class="{% if page.slug == 'contact' %}active{% endif %}"><a href="{% url 'page' 'contact' %}">{% trans 'Contact' %}</a></li>                        
                     </ul>
                 </div>
                         
                        <div class="social">
                             <ul class="social-share">
                                 <li><a id="login_button" href="#" data-toggle="modal" class="btn btn-default" data-target="#login-modal">
-                                    <span>User login</span>
+                                    <span>{% trans 'User login' %}</span>
                                     </a></li>
                                 <li><a href="https://www.facebook.com/Axaxin.Service"><i class="fa fa-facebook"></i></a></li>
                                         
@@ -200,9 +200,9 @@ _________________________________________________________ -->
 {% block bottom %}
     <div class="footer1">
         <div class="wrap text-center">
-            <h3>IF A HIGH TECH COMPANY OFFERED CLEANING SERVICES</h3>
-            <p>We're changing the image of cleaning companies by offering a convenient, Organic, and Fair Labor Service that gives remarkable cleaning delivered with a fully seamless online experience.</p>
-            <a class="orangebu center-block" href="{% url 'page' 'orderform' %}#content">TRY US AND SEE WHAT THE FUSS IS ABOUT</a>
+            <h3>{% trans 'IF A HIGH TECH COMPANY OFFERED CLEANING SERVICES' %}</h3>
+            <p>{% trans 'We are changing the image of cleaning companies by offering a convenient, Organic, and Fair Labor Service that gives remarkable cleaning delivered with a fully seamless online experience.' %}</p>
+            <a class="orangebu center-block" href="{% url 'page' 'orderform' %}#content">{% trans 'TRY US AND SEE WHAT THE FUSS IS ABOUT' %}</a>
         </div>
     </div>
 {% endblock bottom %}
@@ -212,14 +212,17 @@ _________________________________________________________ -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">{% trans 'Axaxin Service' %}</a>. {% trans 'All Rights Reserved.' %}
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li class="{% if page.slug == '/' %}active{% endif %}"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                        <li class="{% if page.slug == 'about' %}active{% endif %}"><a href="{% url 'page' 'about' %}">{% trans 'About Us' %}</a></li>
+                        <li class="{% if page.slug == 'table' %}active{% endif %}"><a href="{% url 'page' 'table' %}">{% trans 'Services & Prices' %}</a></li>
+                        <li class="{% if page.slug == 'orderform' %}active{% endif %}"><a href="{% url 'page' 'orderform' %}">{% trans 'Order' %}</a></li>
+                        <li class="{% if page.slug = 'faq' %}active{% endif %}"><a href="{% url 'page' 'faq' %}">{% trans 'FAQ' %}</a></li>
+                        <li class="{% if page.slug == 'blog' %}active{% endif %}"><a href="{% url 'blog_post_list' %}">{% trans 'Blog' %}</a></li> 
+                        <li class="{% if page.slug == 'contact' %}active{% endif %}"><a href="{% url 'page' 'contact' %}">{% trans 'Contact' %}</a></li>
                     </ul>
                 </div>
             </div>

@@ -45,7 +45,7 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
                             <div class="col-sm-6" id="cont">
                                 <div class="carousel-content">
                                     
-                                    <h1 class="animation">{{ slide.text }}</h1>
+                                    <h1 class="animation">{% trans slide.text %}</h1>
                                     
                                 </div>
                             </div>
@@ -78,25 +78,25 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <img src="{% static 'images/testy.jpg' %}">
-                            <h2>HAPPY CUSTOMERS</h2>
-                            <h3 style="font-weight:bold">Perchuhi Amasian</h3>
-                            <h3>I have children, I work and housework has always been like an insurmountable difficulty for me. I used a variety of services, with some of those I was happy, sometimes was unhappy, however, with "Axaxin service" I simply realized that I am done with searching! They provide quality, not satisfied? They clean up again. You still don't like it? They return the full charge. The idea of 100% Guarantee operates in all over the world. Now in Armenia as well.</h3>
+                            <h2>{% trans 'HAPPY CUSTOMERS' %}</h2>
+                            <h3 style="font-weight:bold">{% trans 'Perchuhi Amasian' %}</h3>
+                            <h3>{% blocktrans %}I have children, I work and housework has always been like an insurmountable difficulty for me. I used a variety of services, with some of those I was happy, sometimes was unhappy, however, with "Axaxin service" I simply realized that I am done with searching! They provide quality, not satisfied? They clean up again. You still don't like it? They return the full charge. The idea of 100% Guarantee operates in all over the world. Now in Armenia as well.{% endblocktrans %}</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-lock"></i>
-                            <h2>TRUSTWORTHY & SECURE</h2>
-                            <h3>128-bit encryption secure site</h3><img src="{% static 'images/paypal.jpg' %}" class="img-responsive"></h3>
+                            <h2>{% trans 'TRUSTWORTHY & SECURE' %}</h2>
+                            <h3>{% trans '128-bit encryption secure site' %}</h3><img src="{% static 'images/paypal.jpg' %}" class="img-responsive"></h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-clock-o"></i>
-                            <h2>Hours</h2>
-                            <h3>Hours of operation: Mon-Sun: 8:30 AM - 5:00 PM</h3>
+                            <h2>{% trans 'Hours' %}</h2>
+                            <h3>{% trans 'Hours of operation: Mon-Sun: 8:30 AM - 5:00 PM' %}</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 
@@ -113,8 +113,8 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
     <section id="services" class="service-item">
        <div class="container">
             <div class="center wow fadeInDown">
-                {% editable page.title page.homepage.content %}<h2>{{ page.title }}</h2>
-                {{ page.homepage.content|richtext_filters|safe }}
+                {% editable page.title page.homepage.content %}<h2>{% trans page.title %}</h2>
+                {% trans page.homepage.content|richtext_filters|safe %}
                 {% endeditable %}
             </div>
 
@@ -126,8 +126,8 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
                                 <img class="img-responsive" src="{{MEDIA_URL}}{% thumbnail item.featured_image 80 80 %}">
                             </div>
                             <div class="media-body">
-                                <h3 class="media-heading">{{ item.title }}</h3>
-                                {{ item.short_description|richtext_filters|safe }}
+                                <h3 class="media-heading">{% trans item.title %}</h3>
+                                {% trans item.short_description|richtext_filters|safe %}
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ upper to allign with its left div. cart/checkout block also moves up (panel clas
     <section id="partner">
         <div class="container">
             <div class="center wow fadeInDown">
-                <h2>Our Partners</h2>
+                <h2>{% trans "Our Partners" %}</h2>
                 
             </div>    
 
