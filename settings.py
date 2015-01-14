@@ -188,7 +188,7 @@ USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "hy"
+LANGUAGE_CODE = "en"
 
 # Supported languages
 _ = lambda s: s
@@ -208,7 +208,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -310,6 +310,7 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
 INSTALLED_APPS = (
     "main",
+    "haykakan",
     "widget_tweaks",
     "datetimewidget",
     "payments.multipayments",
@@ -480,11 +481,4 @@ PAYPAL_IPN_URL = ""
 PAYPAL_SUBMIT_URL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
 # Prod example
 #PAYPAL_SUBMIT_URL = 'https://www.paypal.com/cgi-bin/webscr'
-SECONDARY_PAYMENT_PROCESSORS = (
-    ('paypal', {
-        'name' : 'Pay With Pay-Pal',
-        'form' : 'payments.multipayments.forms.paypal.PaypalSubmissionForm'
-    }),
-)
 
-SHOP_CHECKOUT_FORM_CLASS = 'payments.multipayments.forms.base.CallbackUUIDOrderForm'

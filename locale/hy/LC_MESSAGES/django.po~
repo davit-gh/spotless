@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 12:27+0400\n"
+"POT-Creation-Date: 2015-01-14 11:04+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,146 +37,134 @@ msgstr "Նկարի հետև"
 msgid "Image front"
 msgstr "Նկարի դիմաց"
 
-#: main/models.py:38
-msgid "Slide text"
-msgstr ""
-
-#: main/models.py:40
-msgid "Slide"
-msgstr ""
-
-#: main/models.py:41
-msgid "Slides"
-msgstr ""
-
-#: main/models.py:56
+#: main/models.py:53
 msgid "Portfolio"
 msgstr ""
 
-#: main/models.py:57
+#: main/models.py:54
 msgid "Portfolios"
 msgstr ""
 
-#: main/models.py:61
+#: main/models.py:58
 msgid "Featured Image"
 msgstr "Նկար"
 
-#: main/models.py:67 main/templates/blog/includes/filter_panel.html:38
+#: main/models.py:64 main/templates/blog/includes/filter_panel.html:38
 msgid "Categories"
 msgstr "Կատեգորիաներ"
 
-#: main/models.py:72
+#: main/models.py:69
 msgid "Portfolio item"
 msgstr ""
 
-#: main/models.py:73
+#: main/models.py:70
 msgid "Portfolio items"
 msgstr ""
 
-#: main/models.py:78
+#: main/models.py:75
 msgid "File"
 msgstr ""
 
-#: main/models.py:90
+#: main/models.py:87
 msgid "Portfolio Item Category"
 msgstr ""
 
-#: main/models.py:91
+#: main/models.py:88
 msgid "Portfolio Item Categories"
 msgstr ""
 
-#: main/models.py:105
+#: main/models.py:102
 msgid "Tablecell"
 msgstr ""
 
-#: main/models.py:106
+#: main/models.py:103
 msgid "Tablecells"
 msgstr ""
 
-#: main/models.py:137
+#: main/models.py:134
 msgid "Translated Page"
 msgstr ""
 
-#: main/models.py:138
+#: main/models.py:135
 msgid "Translated Pages"
 msgstr ""
 
-#: main/models.py:146
+#: main/models.py:143
 msgid "Translated Link"
 msgstr ""
 
-#: main/models.py:147
+#: main/models.py:144
 msgid "Translated Links"
 msgstr ""
 
-#: main/models.py:158
+#: main/models.py:155
 msgid "Button text"
 msgstr ""
 
-#: main/models.py:158
+#: main/models.py:155
 msgid "Submit"
 msgstr ""
 
-#: main/models.py:159
+#: main/models.py:156
 msgid "Response"
 msgstr ""
 
-#: main/models.py:162
+#: main/models.py:159
 msgid "Translated Form"
 msgstr ""
 
-#: main/models.py:163
+#: main/models.py:160
 msgid "Translated Forms"
 msgstr ""
 
-#: main/models.py:169
+#: main/models.py:166
 msgid "Label (Original)"
 msgstr ""
 
-#: main/models.py:170
+#: main/models.py:167
 msgid "Label"
 msgstr ""
 
-#: main/models.py:172
+#: main/models.py:169
 msgid "Choices"
 msgstr ""
 
-#: main/models.py:173
+#: main/models.py:170
 msgid ""
 "Comma separated options where applicable. If an option itself contains "
 "commas, surround the option with `backticks`."
 msgstr ""
 
-#: main/models.py:175
+#: main/models.py:172
 msgid "Default value"
 msgstr ""
 
-#: main/models.py:177
+#: main/models.py:174
 msgid "Help text"
 msgstr ""
 
-#: main/models.py:180
+#: main/models.py:177
 msgid "Translated Field"
 msgstr ""
 
-#: main/models.py:181
+#: main/models.py:178
 msgid "Translated Fields"
 msgstr ""
 
-#: main/models.py:191
+#: main/models.py:188
 msgid "Translated Gallery"
 msgstr ""
 
-#: main/models.py:192
+#: main/models.py:189
 msgid "Translated Galleries"
 msgstr ""
 
-#: main/models.py:200
+#: main/models.py:197
 #, fuzzy
 msgid "Translated Image"
 msgstr "Նկար"
 
-#: main/models.py:201
+#: main/models.py:198
 #, fuzzy
 msgid "Translated Images"
 msgstr "Նկար"
@@ -502,7 +490,6 @@ msgid "Perchuhi Amasian"
 msgstr "Պերճուհի Ամասյան"
 
 #: main/templates/pages/index.html:83
-#, python-format
 msgid ""
 "I have children, I work and housework has always been like an insurmountable "
 "difficulty for me. I used a variety of services, with some of those I was "
@@ -514,10 +501,10 @@ msgid ""
 msgstr ""
 "Ես ունեմ երեխաներ, աշխատում եմ և տնային գործերով զբաղվելը ինձ համար միշտ "
 "եղել է անհաղթահարելի դժվարություն :) Օգտվել եմ տարբեր ծառայություններից, "
-"դրանց մի մասից գոհ եմ եղել, երբեմն դժգոհ եմ եղել: Ինչևէ, \"Աղախին սերվիսի\" "
+"դրանց մի մասից գոհ եմ եղել, երբեմն դժգոհ եմ եղել: Ինչևէ, 'Աղախին սերվիսի' "
 "հետ ես ուղղակի հասկացա, որ վերջ, ես էլ չեմ փնտրելու! Նրանք ապահովում են "
 "որակ, հակառակ դեպքում մաքրում են կրկին, իսկ դժգոհության դեպքում վերադարձնում "
-"են գումարը: Սա 200%% Երաշխիքի գաղափարն է, որը գործում է ամբողջ աշխարհում, "
+"են գումարը: Սա 200% Երաշխիքի գաղափարն է, որը գործում է ամբողջ աշխարհում, "
 "այժմ նաև Հայաստանում :)"
 
 #: main/templates/pages/index.html:90

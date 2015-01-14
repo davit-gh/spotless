@@ -80,7 +80,7 @@
 
 			                    <div class="col-sm-6">
 			                        <div class="form-group">
-			                            {% trans vis.label_tag %}{% trans vis.errors %}
+			                            {% trans vis.label_tag %}{% for err in vis.errors %}{% trans err %}{% endfor %}
 		                            	{% render_field vis class="form-control" %}
 			                        </div>
 			                    </div>

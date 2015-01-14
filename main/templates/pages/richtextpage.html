@@ -1,11 +1,12 @@
+{# richtextpage.html #}
+ 
 {% extends "pages/page.html" %}
+{% load i18n mezzanine_tags translate_tags %}
+ 
+{% block main %}
+    {{ block.super }}
 
-{% load mezzanine_tags %}
-
-{% block main %}{{ block.super }}
-
-{% editable page.richtextpage.content %}
-{{ page.richtextpage.content|richtext_filters|safe }}
-{% endeditable %}
-
+    {% with page.richtextpage|get_object_translation as translated_page %}
+	    {{ translated_page.content|richtext_filter|safe }}
+	{% endwith %}
 {% endblock %}
