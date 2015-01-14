@@ -1,0 +1,161 @@
+{% extends "pages/page.html" %}
+
+{% load staticfiles mezzanine_tags shop_tags blog_tags i18n %}
+{% block body_id %}{% endblock %}
+
+
+{% block extra_css %}
+{{ block.super }}
+<!-- make the corners of select tag for sorting round and move it 
+upper to allign with its left div. cart/checkout block also moves up (panel class)-->
+
+{% endblock %}
+{% block slider_js %}
+
+
+{% endblock %}
+{% block extra_js %}
+
+
+{% endblock %}
+
+{% block main_slider %}    
+    {% if page.homepage.slides.all %}
+        <!-- *** SLIDER ***
+    _________________________________________________________ -->
+
+    
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                {% for i in page.homepage.slides.all %}
+                    <li data-target="#main-slider" data-slide-to="{{ forloop.counter0 }}" {% if forloop.counter0 == 0 %}class="active">{% endif %}</li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+            {% for slide in page.homepage.slides.all %}
+                <div class="item {% if forloop.counter0 == 0 %}active{% endif %}" style="background-image: url({{ MEDIA_URL }}{{ slide.image_back }})">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{{ MEDIA_URL }}{{ slide.image_front }}" class="img-responsive">
+                                </div>
+                            </div>
+                            <div class="col-sm-6" id="cont">
+                                <div class="carousel-content">
+                                    
+                                    <h1 class="animation">{% trans slide.text %}</h1>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            {% endfor %}
+           </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+    <!-- /#slider -->
+
+    <!-- *** SLIDER END *** -->
+    {% endif %}  
+{% endblock main_slider %}
+
+{% block feature %}
+    <section id="feature" >
+        <div class="container">
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <img src="{% static 'images/testy.jpg' %}">
+                            <h2>{% trans 'HAPPY CUSTOMERS' %}</h2>
+                            <h3 style="font-weight:bold">{% trans 'Perchuhi Amasian' %}</h3>
+                            <h3>{% blocktrans %}I have children, I work and housework has always been like an insurmountable difficulty for me. I used a variety of services, with some of those I was happy, sometimes was unhappy, however, with "Axaxin service" I simply realized that I am done with searching! They provide quality, not satisfied? They clean up again. You still don't like it? They return the full charge. The idea of 100% Guarantee operates in all over the world. Now in Armenia as well.{% endblocktrans %}</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-lock"></i>
+                            <h2>{% trans 'TRUSTWORTHY & SECURE' %}</h2>
+                            <h3>{% trans '128-bit encryption secure site' %}</h3><img src="{% static 'images/paypal.jpg' %}" class="img-responsive"></h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-clock-o"></i>
+                            <h2>{% trans 'Hours' %}</h2>
+                            <h3>{% trans 'Hours of operation: Mon-Sun: 8:30 AM - 5:00 PM' %}</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+{% endblock feature %}
+
+
+{% block services %}
+    <section id="services" class="service-item">
+       <div class="container">
+            <div class="center wow fadeInDown">
+                {% editable page.title page.homepage.content %}<h2>{% trans page.title %}</h2>
+                {% trans page.homepage.content|richtext_filters|safe %}
+                {% endeditable %}
+            </div>
+
+            <div class="row">
+                {% for item in items %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="media services-wrap wow fadeInDown">
+                            <div class="pull-left">
+                                <img class="img-responsive" src="{{MEDIA_URL}}{% thumbnail item.featured_image 80 80 %}">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">{% trans item.title %}</h3>
+                                {% trans item.short_description|richtext_filters|safe %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                                    
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#services-->
+{% endblock services %}
+
+{% block content %}{% endblock %}
+
+{% block partner %}
+    <section id="partner">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>{% trans "Our Partners" %}</h2>
+                
+            </div>    
+
+            <div class="partners" style="margin-left:30em;">
+                <ul>
+                    
+                    <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="{% static "images/partners/partner4.jpg" %}"></a></li>
+                    
+                </ul>
+            </div>        
+        </div><!--/.container-->
+    </section><!--/#partner-->
+
+{% endblock partner %}

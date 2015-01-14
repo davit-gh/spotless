@@ -1,0 +1,31 @@
+{% extends "pages/page.html" %}
+
+{% load i18n mezzanine_tags staticfiles %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block extra_js %}
+	
+{% endblock %}
+{% block main_span_size %}md-9 clearfix{% endblock %}
+ <!-- https://gist.github.com/joshcartme/5130702 -->
+
+{% block left-span-size %}sm-6{% endblock %}
+{% block right-span-size %}sm-6{% endblock %}
+
+
+ {% block main_slider %}
+    <div class="container">
+      {% editable page.richtextpage.content page.richtextpage.title %}
+        <h1 style="color:#000">{% trans page.richtextpage.title %}</h1>
+        {% trans page.richtextpage.content|richtext_filters|safe %}
+      {% endeditable %}
+    </div>
+{% endblock %}
+
+{% block feature %}
+<hr>
+  
+{% endblock %}
+

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load widget_tweaks i18n mezzanine_tags staticfiles %}
+{% block extra_head %}{{ form.media }}{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+	$( window ).load(function() {
+		$('input#id_amount').val("{{ request.GET.price }}");
+		$('input#id_item_name').val("{{ request.GET.name }}");
+	});
+</script>
+{% endblock %}
+
+{% block main_slider %}
+	<div class="bgimage">
+        <div class="container">
+            <div class="row slide-margin">
+                <div class="col-sm-12" id="img_header">
+                    <div class="carousel-content text-center">
+                        <h1>{% trans 'YOU’RE 60 SECONDS AWAY FROM AWESOME CLEANING!' %}</h1>
+                        
+                    </div>
+                </div>
+
+                <div id="blurbs" class="col-sm-12 hidden-xs animation animated-item-4">
+                    <div class="row center-block">
+                    	<div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/schedule.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">{% trans 'Choose Your Date & Time - 7 days a week' %}</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/clock.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">{% trans 'Book in one minute' %}</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/save.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">{% trans 'Pay securely online' %}</p>
+                        </div>
+                        <div class="col-sm-3">
+                        	<img src="{% static "images/blurbs/no-contracts.png" %}" class="img-responsive center-block">
+                        	<p id="blurb_text">{% trans 'No contracts, cancel anytime' %}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!--/.item-->
+{% endblock %}
+
+{% block no_leftest_content %}
+{% endblock %}
+
+{% block left_content %}
+{% if request.GET.sent %}
+	{% if request.GET.ppl == '1' %}
+        <form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+	        {{ paypal_form.as_p }}
+	        <input type="image" value="{% trans name %}" src="{% static 'images/paypal.jpg' %}" class="img-responsive">
+	    </form>
+    {% else %}
+		<p>{% trans 'Thanks for for your order. You chose to pay by cash. We will be on time!' %}
+	{% endif %}    
+
+     		
+{% else %}
+ 	{% editable page.title page.form.content %}
+ 		<h2>{% trans page.title %}</h2>
+        {% trans page.form.content|richtext_filters|safe %}
+ 	{% endeditable %}
+ 	<div id="form_div">
+		<form method="post">
+				{% csrf_token %}
+				{% for hidden in form.hidden_fields %}
+					{{hidden}}
+				{% endfor %}
+				
+					<div class="row">
+	                	{% for vis in form.visible_fields %}
+
+			                    <div class="col-sm-6">
+			                        <div class="form-group">
+			                            {% trans vis.label_tag %}{% for err in vis.errors %}{% trans err %}{% endfor %}
+		                            	{% render_field vis class="form-control" %}
+			                        </div>
+			                    </div>
+			                    {% if forloop.last %}
+							      </div>
+							    {% else %}
+							      {% if forloop.counter|divisibleby:"2" %}
+							        </div><div class="row">
+							      {% endif %}
+							    {% endif %}			
+	             		{% endfor %}
+				    
+				    <div class="col-sm-12 text-center">
+				    	
+							<button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {% trans page.form.button_text %}</button>
+					
+					</div>
+				
+		</form>
+	</div>
+{% endif %}
+{% endblock left_content %}
+
+{% block right_content %}
+	<h3><i class="fa fa-smile-o"></i> {% trans "Friendly Service" %}</h3>
+	<p>{% trans 'Fast and friendly customer service folks. Our average response time for emails is now 14 minutes.' %}</p>
+	<hr>
+	<h3><i class="fa fa-home"></i> {% trans "WE PROVIDE SUPPLIES" %}</h3>
+	<p>{% trans 'We got this! Our team partners bring their own supplies and vacuum and honor special requests.' %}</p>
+		<hr>
+	<h3><i class="fa fa-clock-o"></i> {% trans "SPEEDY CONFIRMATION" %}</h3>
+	<p>{% trans 'Book and receive a confirmation within 30 minutes during normal booking hours from 8:30am to midnight!' %}</p>
+		<hr>
+	<h3><i class="fa fa-lock"></i> {% trans "SAFE SHOPPING GUARANTEE" %}</h3>
+	<p>{% trans 'It is safe to pay with Paypal as we use both-way communication encrytion and guarantee the safety of your funds.' %}</p>
+{% endblock %}
+

@@ -194,6 +194,7 @@ LANGUAGE_CODE = "en"
 _ = lambda s: s
 LANGUAGES = (
     ('en', _('English')),
+    ('hy', _('Armenian')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -208,7 +209,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -481,4 +482,3 @@ PAYPAL_IPN_URL = ""
 PAYPAL_SUBMIT_URL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
 # Prod example
 #PAYPAL_SUBMIT_URL = 'https://www.paypal.com/cgi-bin/webscr'
-

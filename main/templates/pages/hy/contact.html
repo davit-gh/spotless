@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags staticfiles widget_tweaks %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block left-span-size %}sm-12{% endblock %}
+{% block no_right_content %}{% endblock %}
+
+{% block main_slider %}
+    <div class="main forpage">
+            <div class="wrap">
+                
+                <div class="subnavi">
+                    <div class="bighead text-center">
+                        <p class="bhp">{% trans 'HAVE' %} <span class="whiti">{% trans 'QUESTIONS' %}</span>{% trans '? WE HAVE GOT' %} <span class="whiti">{% trans 'ANSWERS' %}</span>.</p>
+                        <p class="shpwhiti">{% trans 'Get answers to your questions from our Customer Happiness Team.' %}</p>
+                        <p class="shp">{% trans 'Five ways to get in touch!' %}</p>
+                    </div>                  
+                </div>
+                
+            </div>
+        </div>
+{% endblock %}
+
+{% if request.GET.sent %}
+    <p>{% trans page.form.response %}</p>
+{% else %}
+    {% block left_content %}
+        {% trans page.form.content|richtext_filters|safe %}
+       <div id="form_div">
+        <form method="post">
+                {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                    {{hidden}}
+                {% endfor %}
+                
+                        {% for vis in form.visible_fields %}
+
+
+                                    <div class="form-group">
+                                        {% trans vis.label_tag %}{% for error in vis.errors %}{% trans error %}{% endfor %}<br>{% trans vis.help_text %}
+                                        {% render_field vis class="form-control" %}
+                                    </div>
+
+                                         
+                        {% endfor %}
+                    
+                    <div class="col-sm-12 text-center">
+                        <button id="sbmt_btn" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> {% trans page.form.button_text %}</button>
+                    </div>
+                
+        </form>
+        <div id="contact_methods">
+            <h4>{% trans 'Get fast answers on Facebook: Axaxin Service' %}</h4>
+            <hr>
+            <h4>{% trans 'Email us directly at info@axaxin.com for a speedy reply.' %}</h4>
+            <hr>
+            <h4>{% trans 'On the run? Call us at 055 53 30 34. If you are looking for a quote please' %} <a href="{% url 'page' 'table' %}">{% trans 'click here' %}</a> {% trans 'to see our flat rate pricing!' %}</h4>
+            <hr>
+            <h4>{% trans 'Chat live with one of our friendly folks!' %}</h4>
+        </div>
+    </div>
+    {% endblock %}
+{% endif %}
+
